@@ -18,7 +18,7 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, message):
    print("Message Recieved: "+message.payload.decode())
-   f = open('/home/pi/test/temperature.txt', 'w')
+   f = open('/your/file/location/temperature.txt', 'w')
    received = message.payload.decode()
    f.write(str(received))
    f.close()
