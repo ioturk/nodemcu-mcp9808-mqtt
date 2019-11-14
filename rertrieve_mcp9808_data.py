@@ -8,10 +8,10 @@ from time import *
 import time
 import paho.mqtt.client as mqtt
 
-broker_url = "farmer.cloudmqtt.com"
-broker_port = 14507
-user = "gtjboggm"
-password = "hXhG1stsPBWE"
+broker_url = "Your mqtt server name"
+broker_port = mqtt port number
+user = "your mqtt user name"
+password = "your mqtt password"
 
 def on_connect(client, userdata, flags, rc):
    print("Connected With Result Code "+rc)
@@ -29,9 +29,6 @@ client.on_connect = on_connect
 client.on_message = on_message
 client.connect(broker_url, broker_port)
 
-client.subscribe("Suadiye Temperature", qos=1)
-
-# client.publish(topic="Suadiye Temperature", payload="TestingPayload", qos=1, retain=False)
-
+client.subscribe("Topic to subscribe", qos=1)
 client.loop_forever()
 
