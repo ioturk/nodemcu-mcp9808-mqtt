@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import os
-
 import subprocess
 from shutil import copyfile
 from time import *
@@ -28,7 +27,5 @@ client.username_pw_set(user, password=password)
 client.on_connect = on_connect
 client.on_message = on_message
 client.connect(broker_url, broker_port)
-
 client.subscribe("Topic to subscribe", qos=1)
 client.loop_forever()
-
