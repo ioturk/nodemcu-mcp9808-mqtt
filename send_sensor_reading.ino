@@ -88,11 +88,13 @@ void loop() {
   dtostrf(c, 7, 2, reading);
 
 // publish part
+//  delay(1000);
+//  client.connect("ESP8266Client", mqttUser, mqttPassword);
   client.publish("Your Topic Name Here", reading);
   delay(10000);
 
 //  Serial.println("Shutdown MCP9808.... ");
   tempsensor.shutdown_wake(1); // shutdown MSP9808 - power consumption ~0.1 mikro Ampere, stops temperature sampling
 //  Serial.println("");
-
+//delay(300000);
 }
